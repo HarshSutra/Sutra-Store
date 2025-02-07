@@ -1,11 +1,15 @@
 import React from "react";
 import { assets } from "../../assets/assets";
+import { AlignCenter } from "lucide-react";
 
 const FeaturedCategories = () => {
   return (
-    <div className="font-semibold text-3xl pl-12">
+    <div className="p-10">
+    <div className="font-semibold text-3xl">
       Featured Categories
-      <div className="container w-full flex gap-15 pl-8 mt-10">
+    </div>
+    <div className="flex justify-center w-full items-center gap-25 mt-10">
+      {/* <div className="w-full flex gap-25 mt-10"> */}
         <div className="flex flex-col items-center">
           <img
             className="h-30 w-30 rounded-full object-cover object-center transition-transform duration-300 transform hover:scale-110 shadow-md hover:shadow-xl"
@@ -72,6 +76,7 @@ const FeaturedCategories = () => {
         </div>
       </div>
     </div>
+
   );
 };
 
