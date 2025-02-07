@@ -16,7 +16,9 @@ const SignInPopup = ({ isOpen, onClose, userData, onNewUserClick }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = userData.find((user) => user.email === email && user.password === password);
+    const user = userData.find(
+      (user) => user.email === email && user.password === password
+    );
     if (user) {
       alert("Login successful");
       onClose();
@@ -46,16 +48,22 @@ const SignInPopup = ({ isOpen, onClose, userData, onNewUserClick }) => {
             onChange={(e) => setPassword(e.target.value)}
             className="w-full h-10 p-2 mb-4 border rounded-md"
           />
-          <button type="submit" className="bg-orange-500 w-full h-10 text-white rounded-md">
+          <button
+            type="submit"
+            className="bg-orange-500 w-full h-10 text-white rounded-md"
+          >
             Sign In
           </button>
         </form>
-        
-        <div className="mt-4">
 
+        <div className="mt-4">
           <span className="text-gray-600">New User? </span>
-          <button onClick={onNewUserClick} className="text-orange-500">Create an account</button>
-          <button onClick={onClose} className="text-gray-600 pl-22 text-10">Close</button>
+          <button onClick={onNewUserClick} className="text-orange-500">
+            Create an account
+          </button>
+          <button onClick={onClose} className="text-gray-600 pl-22 text-10">
+            Close
+          </button>
         </div>
       </div>
     </div>
@@ -103,11 +111,16 @@ const SignUpPopup = ({ isOpen, onClose, addUser }) => {
             onChange={(e) => setPassword(e.target.value)}
             className="w-full h-10 p-2 mb-4 border rounded-md"
           />
-          <button type="submit" className="bg-orange-500 w-full h-10 text-white rounded-md">
+          <button
+            type="submit"
+            className="bg-orange-500 w-full h-10 text-white rounded-md"
+          >
             Create Account
           </button>
         </form>
-        <button onClick={onClose} className="mt-4 text-10 pl-35 text-gray-600">Close</button>
+        <button onClick={onClose} className="mt-4 text-10 pl-35 text-gray-600">
+          Close
+        </button>
       </div>
     </div>
   );
@@ -166,15 +179,16 @@ const Header = () => {
         <div className="container mx-auto flex justify-center space-x-6 gap-10">
           <Menu>
             <MenuHandler>
-              <Button className="bg-orange-500 w-60 h-8 justify-center p-2"> Browse All Categories</Button>
+              <Button className="bg-orange-500 w-60 h-8 justify-center p-2">
+                {" "}
+                Browse All Categories
+              </Button>
             </MenuHandler>
             <MenuList>
               <MenuItem>All Categories</MenuItem>
               <MenuItem>Jewelry</MenuItem>
               <MenuItem>Electronics</MenuItem>
-              <Menu
-                placement="right-start"
-              >
+              <Menu placement="right-start">
                 <MenuHandler className="flex items-center justify-between">
                   <MenuItem>
                     Clothing
@@ -191,15 +205,46 @@ const Header = () => {
               </Menu>
             </MenuList>
           </Menu>
+          <a href="/" className="hover:text-orange-500">
+          Home
+        </a>
+        <Link to="/products/electronics" className="hover:text-orange-500">
+          Electronics
+        </Link>
+        <Link to="/products/jewelery" className="hover:text-orange-500">
+          Jewelry
+        </Link>
+        <Link to="/products/men's clothing" className="hover:text-orange-500">
+          Men's Clothing
+        </Link>
+        <Link to="/products/women's clothing" className="hover:text-orange-500">
+          Women's Clothing
+        </Link>
 
-          <a href="#" className="hover:text-orange-500">Home</a>
-          <a href="#" className="hover:text-orange-500">Fashion</a>
-          <a href="#" className="hover:text-orange-500">Electronics</a>
-          <a href="#" className="hover:text-orange-500">Bags</a>
-          <a href="#" className="hover:text-orange-500">Footwear</a>
-          <a href="#" className="hover:text-orange-500">Groceries</a>
-          <a href="#" className="hover:text-orange-500">Beauty</a>
-          <a href="#" className="hover:text-orange-500">Shop</a>
+          {/* <a href="#" className="hover:text-orange-500">
+            Home
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Fashion
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Electronics
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Bags
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Footwear
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Groceries
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Beauty
+          </a>
+          <a href="#" className="hover:text-orange-500">
+            Shop
+          </a> */}
         </div>
       </nav>
 

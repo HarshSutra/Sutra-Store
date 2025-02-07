@@ -1,15 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { assets } from "../../assets/assets";
 
 const Banner = () => {
   let [current, setCurrent] = useState(0);
 
-  let slides = [
-    "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
-    "https://wallpapercave.com/wp/wp3386769.jpg",
-    "https://wallpaperaccess.com/full/809523.jpg",
-    "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
-  ];
+  let slides = [assets.sale, assets.seasonSale, assets.fashionSale];
 
   let previousSlide = () => {
     if (current === 0) setCurrent(slides.length - 1);
@@ -23,13 +19,39 @@ const Banner = () => {
 
   return (
     <div className="overflow-hidden relative m-10 rounded-2xl">
-      <div className="h-100">
+      <div className="h-150">
         <img src={slides[current]} />;
       </div>
 
-      <div className="absolute top-0 h-100 w-full justify-between items-center flex text-white px-10 text-3xl">
-        <button onClick={previousSlide}>‹</button>
-        <button onClick={nextSlide}>›</button>
+      <div className="absolute top-0 h-100 w-full justify-between items-center flex text-white px-10 pt-50 text-6xl scroll-auto">
+        <button onClick={previousSlide}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 25"
+            fill="currentColor"
+            className="size-12 animate-pulse"
+          >
+            <path
+              fillRule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+        <button onClick={nextSlide}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-12 animate-pulse"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
       </div>
 
       <div className="absolute bottom-0 py-4 flex justify-center gap-3 w-full">
@@ -51,4 +73,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Banner;
