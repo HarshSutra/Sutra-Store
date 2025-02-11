@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const categories = [
   { key: "electronics", label: "Electronics" },
@@ -8,14 +9,25 @@ const categories = [
 ];
 
 const ProductList = () => {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].key);
+  let category = useParams()
+  category = category.category
+  
+  // const [selectedCategory, setSelectedCategory] = useState(categories[0].key);
+  const [selectedCategory, setSelectedCategory] = useState(category);
   const [products, setProducts] = useState([]);
 
+  useEffect(()=>{
+    setSelectedCategory(category)
+  },[category])
+
   useEffect(() => {
+    setSelectedCategory(category)
+    console.log("Selected Category: ",selectedCategory)
     fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [selectedCategory]);
+
 
   const selectedCategoryLabel =
     categories.find((cat) => cat.key == selectedCategory)?.label || "Products";
@@ -41,17 +53,18 @@ const ProductList = () => {
           <h2 className="text-lg font-semibold mb-4">Category</h2>
           <ul className="space-y-2">
             {categories.map((category) => (
-              <li
+              <Link to={`/products/${category.key}`}><li
                 key={category.key}
                 className={`p-2 rounded-md cursor-pointer ${
                   selectedCategory == category.key
                     ? "bg-orange-200 font-semibold"
                     : "hover:bg-gray-200"
                 }`}
-                onClick={() => setSelectedCategory(category.key)}
+                
+                // onClick={() => setSelectedCategory(category.key)}
               >
                 {category.label}
-              </li>
+              </li></Link>
             ))}
           </ul>
         </div>

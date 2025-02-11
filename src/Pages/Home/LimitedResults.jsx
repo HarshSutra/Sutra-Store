@@ -15,7 +15,7 @@ const LimitedResults = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-10 pl-5 pr-5">
+    <div className="mx-auto p-10">
       <h2 className="text-2xl font-semibold mb-6">Limited Time Deals</h2>
 
       <Swiper 
@@ -31,7 +31,7 @@ const LimitedResults = () => {
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <div className="border p-4 rounded-lg shadow-md p-5 bg-white">
+            <div className="border p-4 rounded-lg shadow-md bg-white">
               <img
                 src={product.image}
                 alt={product.title}

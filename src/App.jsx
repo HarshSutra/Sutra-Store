@@ -9,7 +9,8 @@ import ProductList from "./Pages/CategoriesPage/selectedCategoryPage";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const [userId , setUserId] = useState("")
+  
   return (
     <>
       <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path={"/"} exacts={true} element={<Home />}></Route>
           <Route path="/products/:category" element={<ProductList />} />
+          {/* <Route path="/products/:category" element={<ProductList />} /> */}
           {/* <Route path="/categories" element={<CategoriesPage />} />  */}
           
         </Routes>

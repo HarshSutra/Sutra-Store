@@ -1,6 +1,8 @@
 import React from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ImageOff } from "lucide-react";
 import { assets } from "../assets/assets";
+import fetchCartData from "./Header"
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -33,43 +35,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-800">Company</h3>
-            <ul className="mt-2 space-y-2 text-gray-600">
-              <li>About Us</li>
-              <li>Delivery Information</li>
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Contact Us</li>
-              <li>Support Center</li>
-              <li>Careers</li>
+            <h3 className="font-bold text-gray-800 text-2xl">SITEMAP</h3>
+            <ul className="mt-6 space-y-2 text-gray-600">
+              <li><Link to={"/"} className="hover:text-orange-500">Home</Link></li>
+              <li><Link to={"/products/electronics"} className="hover:text-orange-500">Electronics Information</Link></li>
+              <li><Link to={"/products/jewelery"} className="hover:text-orange-500">Jewellary</Link></li>
+              <li><Link to={"/products/men's clothing"} className="hover:text-orange-500">Men's Fashion</Link></li>
+              <li><Link to={"/products/women's clothing"} className="hover:text-orange-500">Women's Fashion</Link></li>
+              
             </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-gray-800">Corporate</h3>
-            <ul className="mt-2 space-y-2 text-gray-600">
-              <li>Account</li>
-              <li>Delivery Information</li>
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Contact Us</li>
-              <li>Support Center</li>
-              <li>Careers</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-gray-800">Popular</h3>
-            <ul className="mt-2 space-y-2 text-gray-600">
-              <li>About Us</li>
-              <li>Delivery Information</li>
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Contact Us</li>
-              <li>Support Center</li>
-              <li>Careers</li>
-            </ul>
-          </div>
+          </div>  
         </div>
 
         <div className="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
