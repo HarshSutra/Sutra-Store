@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
-const Header = lazy(() => import("./Components/Header"));
+const Header = lazy(() => import("./components/Header"));
 const Home = lazy(() => import("./Pages/Home/Home"));
 const Footer = lazy(() => import("./components/Footer"));
 const ProductList = lazy(() =>
