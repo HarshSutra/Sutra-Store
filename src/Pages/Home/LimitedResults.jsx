@@ -4,9 +4,11 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LimitedResults = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=5")
@@ -32,11 +34,14 @@ const LimitedResults = () => {
         {products.map((product) => (
           <SwiperSlide key={product.id}>
             <div className="border p-4 rounded-lg shadow-md bg-white">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-48 object-contain"
-              />
+              <div className="flex justify-center items-center h-48 overflow-hidden cursor-pointer">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-48 object-contain transition-transform duration-300 transform hover:scale-110"
+                  onClick={() => navigate(`/product/${product.id}`)}
+                />
+              </div>
               <div className="mt-4">
                 <p className="text-gray-600 text-sm">{product.category}</p>
                 <h3 className="font-medium text-gray-800 truncate">

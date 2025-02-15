@@ -1,7 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Mail, Clock, ImageOff } from "lucide-react";
 import { assets } from "../assets/assets";
-import fetchCartData from "./Header"
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,7 +13,7 @@ const Footer = () => {
             <p className="text-gray-600 mt-3">
               Awesome Sutra Store Products
             </p>
-            <div className="mt-4 space-y-2 text-gray-600">
+            <div className="mt-4 space-y-2 text-gray-600 w-200">
               <p className="flex items-center">
                 <MapPin size={18} className="text-green-600 mr-2" />
                 <strong>Address:</strong> 607, Link, 100 Feet Rd,Gota, Ahmedabad, Gujarat 382481
@@ -34,9 +33,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="pl-60">
             <h3 className="font-bold text-gray-800 text-2xl">SITEMAP</h3>
-            <ul className="mt-6 space-y-2 text-gray-600">
+            <ul className="mt-6 space-y-2 text-gray-600 w-60">
               <li><Link to={"/"} className="hover:text-orange-500">Home</Link></li>
               <li><Link to={"/products/electronics"} className="hover:text-orange-500">Electronics Information</Link></li>
               <li><Link to={"/products/jewelery"} className="hover:text-orange-500">Jewellary</Link></li>

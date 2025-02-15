@@ -4,13 +4,18 @@ import FeaturedCategories from "./FeaturedCategories";
 import PopularProducts from "./PopularProducts";
 import LimitedResults from "./LimitedResults";
 
-const Home = () => {
+const Home = ({ cartItemList, addToCart, removeFromCart }) => {
   return (
     <div>
       <Banner />
       <FeaturedCategories />
-      <PopularProducts />
+      <PopularProducts
+        addToCart={addToCart}
+        cartItemList={cartItemList}
+        removeFromCart={removeFromCart}
+      />
       <LimitedResults />
+      
     </div>
   );
 };

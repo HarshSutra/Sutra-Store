@@ -12,6 +12,7 @@ import furniture from './furniture.png'
 import fashionSale from './fashionSale.png'
 import seasonSale from './seasonSale.png'
 import sale from './sale.png'
+import favicon from './favicon.png'
 
 export const assets = {
     ecoomerceLogo,
@@ -26,5 +27,6 @@ export const assets = {
     furniture,
     fashionSale,
     seasonSale,
-    sale
+    sale,
+    favicon
 }
